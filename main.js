@@ -117,6 +117,7 @@ function init() {
     });
 
   const glowingEarth = new THREE.Mesh(earthGlowGeometry, earthGlowMaterial);
+  glowingEarth.renderOrder = -1;
 
   earthGroup.add(glowingEarth);
 
