@@ -10,7 +10,6 @@ function init() {
 
   // create  scene,
   const scene = new THREE.Scene();
-  scene.fog = new THREE.Fog(0xff0000, 1);
 
   // create  camera
   const camera = new THREE.PerspectiveCamera(
@@ -33,6 +32,8 @@ function init() {
   renderer.useLegacyLights = true;
   renderer.setSize(sizes.width, sizes.height);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+  const canvasEl = renderer.domElement;
 
   // add the output of the render function to the HTML
   app.appendChild(renderer.domElement);
@@ -142,6 +143,35 @@ function init() {
   }
   earthGroup.rotation.y = 4;
 
+  // Raycaster
+  const raycaster = new THREE.Raycaster();
+  const mousePos = new THREE.Vector2(0, 0);
+  canvasEl.addEventListener("click", function (event) {
+    mousePos.x = (event.clientX / window.innerWidth) * 2 - 1;
+    mousePos.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+    for (let i = 0; i < peopleGroup.children.length; i++) {
+      const current = peopleGroup.children[i];
+      if (current.scale.x !== 1) {
+        current.scale.set(1, 1, 1);
+      }
+    }
+
+    raycaster.setFromCamera(mousePos, camera);
+
+    const intersects = raycaster.intersectObjects(scene.children);
+    const intersectsLength = intersects.length;
+    if (intersectsLength) {
+      for (let i = 0; i < intersectsLength; i++) {
+        const currentObject = intersects[i].object;
+        if (currentObject.type === "Sprite") {
+          currentObject.scale.set(1.2, 1.2, 1.2);
+          currentObject.lookAt(-1, 0, 0);
+        }
+      }
+    }
+  });
+
   // Resize
   window.addEventListener("resize", function () {
     sizes = {
@@ -157,10 +187,10 @@ function init() {
 
   // function for re-rendering/animating the scene
   function tick() {
-    requestAnimationFrame(tick);
     earthGroup.rotation.y += 0.0007;
     orbitControl.update();
     renderer.render(scene, camera);
+    requestAnimationFrame(tick);
   }
   tick();
 }
