@@ -3,48 +3,64 @@
     "lat": 12.21118,
     "lon": 356.132532,
     "size": 1,
-    "img": "people_1.png"
+    "img": "people_1.png",
+    "title": "Explorer from the Tropics",
+    "description": "This person is a seasoned traveler known for venturing into tropical climates and uncovering hidden gems in remote locations."
   },
   {
     "lat": -19.375932,
     "lon": 482.506916,
     "size": 1,
-    "img": "people_2.png"
+    "img": "people_2.png",
+    "title": "Adventurer of the Southern Hemisphere",
+    "description": "A daring individual with a knack for navigating challenging terrains in the southern regions of the world."
   },
   {
     "lat": 30.448674,
     "lon": 38.620663,
     "size": 1,
-    "img": "people_3.png"
+    "img": "people_3.png",
+    "title": "Cultural Enthusiast from the East",
+    "description": "This person is passionate about exploring ancient cultures and traditions in the eastern parts of the world."
   },
   {
     "lat": 49.382373,
     "lon": -66.614873,
     "size": 1,
-    "img": "people_4.png"
+    "img": "people_4.png",
+    "title": "Explorer of Northern Frontiers",
+    "description": "A bold explorer who thrives in colder climates and often travels to northern regions to study wildlife and natural landscapes."
   },
   {
     "lat": 17.308688,
     "lon": 439.103493,
     "size": 1,
-    "img": "people_5.png"
+    "img": "people_5.png",
+    "title": "Desert Nomad",
+    "description": "A traveler who specializes in desert expeditions, often crossing vast dunes and studying desert ecosystems."
   },
   {
     "lat": 45.828799,
     "lon": 127.529316,
     "size": 1,
-    "img": "people_6.png"
+    "img": "people_6.png",
+    "title": "Urban Explorer",
+    "description": "This individual enjoys discovering hidden gems in major metropolitan areas, focusing on architecture and urban landscapes."
   },
   {
     "lat": -26.235611857523082,
     "lon": -62.04492705937466,
     "size": 1,
-    "img": "people_7.png"
+    "img": "people_7.png",
+    "title": "South American Trekker",
+    "description": "An expert in traversing the rugged terrains of South America, often visiting rainforests and mountain ranges."
   },
   {
     "lat": -42.684352840440226,
     "lon": 172.04633013205435,
     "size": 1,
-    "img": "people_8.png"
+    "img": "people_8.png",
+    "title": "Antarctic Explorer",
+    "description": "This person is renowned for their expeditions to the frozen landscapes of the Antarctic, studying extreme environments."
   }
 ]
